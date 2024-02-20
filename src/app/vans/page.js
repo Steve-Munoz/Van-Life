@@ -1,11 +1,41 @@
+"use client"
 
 import Link from 'next/link'
+import react, {useEffect, useState} from "react"
+import "../server"
 export default function Vans() {
+  const [vans, setVans] = useState([])
+
+
+  //https://random-data-api.com
+  useEffect(()=>{
+  
+    fetch("/api/vans").then(res=> res.json()).then(data=> setVans(data.vans))
+  },[])
+  console.log(vans)
+  //
+  const vanElements = vans.map(van=>(
+    <div key = {van.id} className = "van-title">
+      <img src = {van.imageUrl}/>
+      <div className = "van-info">
+        <h3>{van.name}</h3>
+        <p>${van.price}<span>/day</span></p>
+      </div>
+      <i className={`van-type ${van.type} selected`}>{van.type}</i>
+    </div>
+  ))
     return (
-      <>
-      <h1>Vans Page</h1>
+      <div className = "van-list-container">
+        <h1>Explore our van options</h1>
+        <div className = "van-list">
+          {vanElements}
+        </div>
+      {vanElements}
       <Link href="/"> Return to Home Page </Link>
-      </>
+      {/* {vans.map((van,index)=>(
+        <div index = {index} key = {van.id}><p>{van.name}</p></div>
+      ))} */}
+      </div>
    
     );
   }
