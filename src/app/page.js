@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import homeHero from "../../public/images/home-hero.png"
-import Image from "next/image"
 
 
 export default function Home() {
@@ -10,22 +9,6 @@ export default function Home() {
 }
   return (
 
-  //   .link-button {
-  //     display: inline-block;
-  //     text-align: center;
-  //     text-decoration: none;
-  //     border: none;
-  //     padding: .75rem 1.375rem;
-  //     color: initial;
-  //     font-weight: 700;
-  //     border-radius: 5px;
-  //     cursor: pointer;
-  //     transition: transform .1s ease-in-out;
-  // }
-  
-  // .link-button:hover {
-  //     transform: translate(1px, 1px);
-  // }
     <>
     <div style={styling}  className=" home-container bg-center bg-cover min-h-350 text-white py-11 px-6">
       <div className ="bg-[#FF8C38]/40 p-[10px] rounded-md ">
