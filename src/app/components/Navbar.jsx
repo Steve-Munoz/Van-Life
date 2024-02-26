@@ -13,6 +13,7 @@ export default function Navbar() {
           <ul className = "flex md:flex-row flex-col items-center gap-[4vw]">
             <li className = " hover:text-[#4D4D4D] text-[25px] hover:underline hover:decoration-2 font-black mr-auto"><Link href="/"> #VANLIFE</Link></li>
             <li className = " hover:text-[#161616] hover:underline hover:decoration-2 font-[600] text-[19px]"><Link href="/about"> About</Link></li>
+            <li className = " hover:text-[#161616] hover:underline hover:decoration-2 font-[600] text-[19px]"><Link href="/host"> Host</Link></li>
             <li className = " hover:text-[#161616] font-[600] hover:underline hover:decoration-2 text-[19px]"><Link href="/vans"> Vans</Link></li>
            
 

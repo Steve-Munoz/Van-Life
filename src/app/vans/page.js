@@ -1,7 +1,7 @@
 "use client"
 
 import Link from 'next/link'
-import react, {useEffect, useState} from "react"
+import React, {useEffect, useState} from "react"
 import "../server"
 export default function Vans() {
   const [vans, setVans] = useState([])
@@ -16,12 +16,14 @@ export default function Vans() {
   //
   const vanElements = vans.map(van=>(
     <div key = {van.id} className = "van-title">
+      <Link href={`/vans/${van.id}`}>
       <img src = {van.imageUrl}/>
-      <div className = "van-info">
+      <div className = "van-info"> 
         <h3>{van.name}</h3>
         <p>${van.price}<span>/day</span></p>
       </div>
       <i className={`van-type ${van.type} selected`}>{van.type}</i>
+      </Link>
     </div>
   ))
     return (
@@ -30,7 +32,7 @@ export default function Vans() {
         <div className = "van-list">
           {vanElements}
         </div>
-      {vanElements}
+      
       <Link href="/"> Return to Home Page </Link>
       {/* {vans.map((van,index)=>(
         <div index = {index} key = {van.id}><p>{van.name}</p></div>
