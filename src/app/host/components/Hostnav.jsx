@@ -28,7 +28,8 @@ export default function Hostnav() {
   const navigation = [
     { path: '/host', name: 'Host' },
     { path: '/host/income', name: 'Income' },
-    { path: '/host/income/reviews', name: 'Reviews' },
+    { path: '/host/reviews', name: 'Reviews' },
+    { path: '/host/vans', name: 'Vans' },
     
   ];
   const pathname = usePathname()
