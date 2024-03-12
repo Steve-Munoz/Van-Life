@@ -3,7 +3,7 @@
 import React,{useState, useEffect} from 'react';
 import { useParams } from 'next/navigation'
 import Link from 'next/link'
-import "../../../../server"
+import "../../../server"
 
 export default function HostVanDetail() {
     const [currentVan, setCurrentVan] = useState(null)
@@ -15,6 +15,7 @@ export default function HostVanDetail() {
         fetch(`/api/vans/${params.vanid}`).then(res=> res.json()).then(data => setCurrentVan(data.vans))
     },[])
 
+    console.log(params)
 
     if (!currentVan) {
         return <h1>Loading...</h1>
@@ -23,7 +24,7 @@ export default function HostVanDetail() {
         <>
          <section>
             <Link
-                href = {`/host/vans`}
+                href = {`/host/vans/${params.vanid}`}
                 className="back-button"
             >&larr; <span>Back to all vans</span></Link>
 
