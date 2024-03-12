@@ -1,4 +1,3 @@
-
 "use client"
 import React, {useEffect, useState} from "react"
 import Link from 'next/link'
@@ -24,7 +23,7 @@ export default function HostVans() {
         fetch("/api/vans").then(res=> res.json()).then(data=> setVans(data.vans))
       },[])
      
-     const filteredVans = vans.filter(van => van.hostID.includes("123"))
+     const filteredVans = vans.filter(van => van.hostId.includes("123"))
 
     const hostVansEls = filteredVans.map(van => (
         <Link
